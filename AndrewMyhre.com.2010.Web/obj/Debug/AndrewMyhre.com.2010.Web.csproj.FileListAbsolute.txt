@@ -1,0 +1,5 @@
+D:\Workspace\AndrewMyhre.com.2010\AndrewMyhre.com.2010.Web\bin\AndrewMyhre.com.2010.Web.dll
+D:\Workspace\AndrewMyhre.com.2010\AndrewMyhre.com.2010.Web\bin\AndrewMyhre.com.2010.Web.pdb
+D:\Workspace\AndrewMyhre.com.2010\AndrewMyhre.com.2010.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\Workspace\AndrewMyhre.com.2010\AndrewMyhre.com.2010.Web\obj\Debug\AndrewMyhre.com.2010.Web.dll
+D:\Workspace\AndrewMyhre.com.2010\AndrewMyhre.com.2010.Web\obj\Debug\AndrewMyhre.com.2010.Web.pdb
