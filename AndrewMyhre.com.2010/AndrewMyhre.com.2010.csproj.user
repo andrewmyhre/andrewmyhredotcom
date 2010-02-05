@@ -22,8 +22,7 @@
           <StartWorkingDirectory>
           </StartWorkingDirectory>
           <ShowWebRefOnDebugPrompt>True</ShowWebRefOnDebugPrompt>
-          <OutOfBrowserProjectToDebug>
-          </OutOfBrowserProjectToDebug>
+          <OutOfBrowserProjectToDebug>AndrewMyhre.com.2010.Web</OutOfBrowserProjectToDebug>
           <ShowRiaSvcsOnDebugPrompt>True</ShowRiaSvcsOnDebugPrompt>
         </SilverlightProjectProperties>
       </FlavorProperties>
