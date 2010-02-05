@@ -32,18 +32,19 @@ namespace AndrewMyhre.com._2010
             fadeInBlur = new DoubleAnimation();
             fadeInBlur.From = 1000;
             fadeInBlur.To = 1000;
-            fadeInBlur.Duration = TimeSpan.FromSeconds(2);
+            fadeInBlur.Duration = TimeSpan.FromMilliseconds(100);
             Storyboard.SetTarget(fadeInBlur, blurEffect);
             Storyboard.SetTargetProperty(fadeInBlur, new PropertyPath("BlurEffect.Radius"));
 
             sbFadeIn.Children.Add(fadeInBlur);
         }
 
-        public void SetBlur(double blur)
+        public void SetProgress(double progress)
         {
             fadeInBlur.From = blurEffect.Radius;
-            fadeInBlur.To = blur;
-            fadeInBlur.Duration = TimeSpan.FromSeconds(1);
+            fadeInBlur.To = ((1 - progress) * 30) + 2;
+            fadeInBlur.Duration = TimeSpan.FromMilliseconds(10);
+            this.loadingText.Opacity = progress;
             sbFadeIn.Begin();
         }
 

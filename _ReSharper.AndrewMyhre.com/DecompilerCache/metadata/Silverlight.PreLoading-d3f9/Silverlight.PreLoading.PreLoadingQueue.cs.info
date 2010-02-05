@@ -1,0 +1,11 @@
+R# version: 5.0.1565.10
+assembly Silverlight.PreLoading, Version=1.0.0.0, Culture=neutral
+  file D:\Workspace\git\am.com\AndrewMyhre.com.2010\lib\Silverlight.PreLoading.dll mtime 2/5/2010 10:51:04 AM
+referenced assembly mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  file C:\Program Files\Reference Assemblies\Microsoft\Framework\Silverlight\v3.0\mscorlib.dll mtime 6/23/2009 9:32:30 PM
+referenced assembly System.Net, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  file C:\Program Files\Reference Assemblies\Microsoft\Framework\Silverlight\v3.0\System.Net.dll mtime 6/23/2009 9:32:32 PM
+referenced assembly System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  file C:\Program Files\Reference Assemblies\Microsoft\Framework\Silverlight\v3.0\System.Core.dll mtime 6/23/2009 9:32:32 PM
+referenced assembly System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  file C:\Program Files\Reference Assemblies\Microsoft\Framework\Silverlight\v3.0\system.dll mtime 6/23/2009 9:32:30 PM

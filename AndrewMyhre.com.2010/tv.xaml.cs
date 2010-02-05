@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Silverlight.PreLoading;
+using System.Diagnostics;
 
 namespace AndrewMyhre.com._2010
 {
@@ -48,7 +49,10 @@ namespace AndrewMyhre.com._2010
 
         void queue_OnItemProgress(object sender, PreLoadingProgressEventArgs e)
         {
+            Debug.WriteLine(string.Format("loading {0:#}%", queue.TotalProgress * 100));
             this.loading.loadingText.Text = string.Format("loading {0:#}%", queue.TotalProgress*100);
+            Debug.WriteLine(string.Format("blur={0}", (1 - queue.TotalProgress) * 30));
+            loading.SetProgress(queue.TotalProgress);
         }
 
         void queue_ItemFailed(object sender, EventArgs e)
@@ -77,7 +81,6 @@ namespace AndrewMyhre.com._2010
             flickerMediaElement.SetSource(e.Loaded.Stream);
             InitialiseFlickerVideo(flickerMediaElement);
             flickerMediaElement.MediaEnded += FlickerMediaEnded;
-            loading.SetBlur((_flickers.Count/_queueSize)*1000 + 3);
             _loadedItems++;
         }
 

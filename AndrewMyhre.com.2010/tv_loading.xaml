@@ -7,7 +7,7 @@
     d:DesignHeight="300" d:DesignWidth="400">
     
     <Grid x:Name="LayoutRoot" Background="Black">
-        <TextBlock Text="loading..." x:Name="loadingText" Foreground="White" FontFamily="Georgia" FontSize="80" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Opacity="0"  Text="loading..." x:Name="loadingText" Foreground="White" FontFamily="Georgia" FontSize="80" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock.Effect>
                 <BlurEffect x:Name="blurEffect" Radius="100" />
             </TextBlock.Effect>
