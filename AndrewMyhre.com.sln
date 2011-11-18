@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer", "MediaControl\MediaPlayer.csproj", "{048A7D4F-483C-41E5-9705-6F4B31A17DA2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewMyhre.com.2010", "AndrewMyhre.com.2010\AndrewMyhre.com.2010.csproj", "{0A07A9B2-9F9F-44C5-8796-EF26C5B7E3E9}"

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,6 +13,10 @@
     <AssemblyName>AndrewMyhre.com.2010.Web</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <SilverlightApplicationList>{0A07A9B2-9F9F-44C5-8796-EF26C5B7E3E9}|..\AndrewMyhre.com.2010\AndrewMyhre.com.2010.csproj|ClientBin|False</SilverlightApplicationList>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
