@@ -1,0 +1,7 @@
+Bin
+obj
+_ReSharper*
+*.user
+*.dotcover
+*.suo
+_Upgrade*

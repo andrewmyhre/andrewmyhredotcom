@@ -1,8 +1,0 @@
-﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="AndrewMyhre.com.2010" EntryPointType="AndrewMyhre.com._2010.App" RuntimeVersion="3.0.40624.0">
-  <Deployment.Parts>
-    <AssemblyPart x:Name="AndrewMyhre.com.2010" Source="AndrewMyhre.com.2010.dll" />
-    <AssemblyPart x:Name="MediaPlayer" Source="MediaPlayer.dll" />
-    <AssemblyPart x:Name="Silverlight.PreLoading" Source="Silverlight.PreLoading.dll" />
-    <AssemblyPart x:Name="System.Xml.Linq" Source="System.Xml.Linq.dll" />
-  </Deployment.Parts>
-</Deployment>
