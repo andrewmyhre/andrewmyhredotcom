@@ -21,7 +21,7 @@ namespace AndrewMyhre.com._2010
         public static string[] FlickerVideos = null;
         public static string[] ContentVideos = null;
         public static string BaseUrl = "";
-        private const bool _testOnAMDotCom=true;
+        private bool _testOnAMDotCom=false;
 
         readonly PreLoadingQueue queue = new PreLoadingQueue();
 
