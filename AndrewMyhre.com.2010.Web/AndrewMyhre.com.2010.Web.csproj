@@ -61,6 +61,7 @@
   <ItemGroup>
     <Content Include="AndrewMyhre.com.2010TestPage.aspx" />
     <Content Include="AndrewMyhre.com.2010TestPage.html" />
+    <Content Include="ClientAccessPolicy.xml" />
     <Content Include="ClientBin\AndrewMyhre.com.2010.xap" />
     <Content Include="index.html" />
     <Content Include="images\lounge.jpg" />
