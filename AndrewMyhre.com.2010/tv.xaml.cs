@@ -149,8 +149,11 @@ namespace AndrewMyhre.com._2010
         {
             content.Visibility = Visibility.Visible;
             _timer.Stop();
+            string sourceUrl = App.ContentVideos[_nextContentVideoIndex];
+            if (sourceUrl.StartsWith("/"))
+                sourceUrl = App.BaseUrl + sourceUrl;
             content.Source =
-                new Uri(App.ContentVideos[_nextContentVideoIndex]);
+                new Uri(sourceUrl, UriKind.Absolute);
             _nextContentVideoIndex = _rand.Next(App.ContentVideos.Length - 1);
         }
 
