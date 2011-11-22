@@ -150,8 +150,7 @@ namespace AndrewMyhre.com._2010
             content.Visibility = Visibility.Visible;
             _timer.Stop();
             content.Source =
-                new Uri("http://www.tanash.net/customassets/andrewmyhre/file/" +
-                        App.ContentVideos[_nextContentVideoIndex]);
+                new Uri(App.ContentVideos[_nextContentVideoIndex]);
             _nextContentVideoIndex = _rand.Next(App.ContentVideos.Length - 1);
         }
 
