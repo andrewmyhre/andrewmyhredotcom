@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <c:Ident Text="portfolio" Margin="10,0,0,0" FontSize="25" FadeTime="0:0:5" FontFamily="Georgia" Click="identPortfolio_Click" HorizontalAlignment="Left" Visibility="Collapsed" />
-            <c:Ident Text="blog" Margin="10,0,0,0" Grid.Column="1" FontSize="25" FontFamily="Georgia" FadeTime="0:0:5" HorizontalAlignment="Left" Visibility="Collapsed" NavigateUri="http://andrewmyhre.wordpress.com" Target="_blank" />
+            <c:Ident Text="blog" Margin="10,0,0,0" Grid.Column="1" FontSize="25" FontFamily="Georgia" FadeTime="0:0:5" HorizontalAlignment="Left" Visibility="Collapsed" NavigateUri="http://blog.andrewmyhre.com" Target="_blank" />
             <c:Ident Text="cv" Margin="10,0,0,0" Grid.Column="2" FontSize="25" FontFamily="Georgia" FadeTime="0:0:5" HorizontalAlignment="Left" Visibility="Collapsed" NavigateUri="http://andrewmyhre.com/cv.html" Target="_blank" />
             <c:Ident Text="twitter" Margin="10,0,0,0" Grid.Column="3" FontSize="25" FontFamily="Georgia" FadeTime="0:0:5" HorizontalAlignment="Left" Visibility="Collapsed" NavigateUri="http://twitter.com/andrewmy" Target="_blank" />
             <c:Ident Text="stackoverflow" Margin="10,0,0,0" Grid.Column="4" FontSize="25" FontFamily="Georgia" FadeTime="0:0:5" HorizontalAlignment="Left" Visibility="Collapsed" NavigateUri="http://stackoverflow.com/users/5152/andrew-myhre" Target="_blank" />
