@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="AndrewMyhre.com._2010.idea3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <ListBox Grid.Column="0" x:Name="menu" Background="Transparent" HorizontalAlignment="Left" 
+                 VerticalAlignment="Center" SelectionChanged="menu_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=Text}" Foreground="White" FontSize="28" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox Grid.Column="1" x:Name="portfolio" 
+                 Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                 Visibility="Collapsed" SelectionChanged="portfolio_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=Project}" Foreground="White" FontSize="20" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <Grid x:Name="portfolioDetail" Grid.Column="2" Visibility="Collapsed">
+            <StackPanel>
+                <TextBlock Text="{Binding Path=Project}" Foreground="White" FontSize="16" />
+                <TextBlock Text="{Binding Path=Client}" Foreground="White" FontSize="16" />
+                <TextBlock Text="{Binding Path=Description}" Foreground="White" FontSize="16" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

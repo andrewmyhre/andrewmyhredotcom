@@ -9,24 +9,25 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using AndrewMyhre.com._2010.Services;
 using AndrewMyhre.com._2010.ViewModels;
 
 namespace AndrewMyhre.com._2010.portfolio
 {
     public partial class portfolio : UserControl
     {
-        IPortfolioRepository portfolioRepository;
+        private IAndrewMyhreService _service = null;
         double screenWidth = 0;
         int portfolioIndex = 0;
         Storyboard sbFadeIn = new Storyboard();
         public event EventHandler Close;
 
-        public portfolio()
+        public portfolio(IAndrewMyhreService service)
         {
+            _service = service;
             InitializeComponent();
             this.SizeChanged += new SizeChangedEventHandler(portfolio_SizeChanged);
             this.Loaded += new RoutedEventHandler(portfolio_Loaded);
-            portfolioRepository = new PortfolioRepositoryFake();
         }
 
         void portfolio_Loaded(object sender, RoutedEventArgs e)
@@ -39,14 +40,14 @@ namespace AndrewMyhre.com._2010.portfolio
         {
             int i=0;
 
-            IEnumerable<PortfolioViewModel> portfolios = portfolioRepository.All();
-            if (portfolios == null)
+            var portfolio = _service.GetPortfolio();
+            if (portfolio == null)
             {
                 this.Visibility = System.Windows.Visibility.Collapsed;
                 return;
             }
 
-            foreach (PortfolioViewModel p in portfolios)
+            foreach (var p in portfolio)
             {
                 portfolioitem pItem = new portfolioitem(p) { Opacity = 0, Visibility = System.Windows.Visibility.Collapsed };
                 TransformGroup tg = new TransformGroup();

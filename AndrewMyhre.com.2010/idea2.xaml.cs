@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using AndrewMyhre.com._2010.Services;
 using AndrewMyhre.com._2010.portfolio;
 using Silverlight.PreLoading;
 
@@ -16,11 +17,13 @@ namespace AndrewMyhre.com._2010
 {
     public partial class idea2 : UserControl
     {
+        private readonly IAndrewMyhreService _service;
         PreLoadingQueue queue = new PreLoadingQueue();
         portfolio.portfolio portfolio=null;
 
-        public idea2()
+        public idea2(IAndrewMyhreService service)
         {
+            _service = service;
             InitializeComponent();
             this.Loaded += new RoutedEventHandler(idea2_Loaded);
         }
@@ -52,7 +55,7 @@ namespace AndrewMyhre.com._2010
         void identPortfolio_Click(object sender, EventArgs eventArgs)
         {
             mainContent.Children.Clear();
-            portfolio = new _2010.portfolio.portfolio();
+            portfolio = new _2010.portfolio.portfolio(_service);
             mainContent.Children.Add(portfolio);
             portfolio.Close += new EventHandler(portfolio_Close);
             mainContent.Visibility = System.Windows.Visibility.Visible;

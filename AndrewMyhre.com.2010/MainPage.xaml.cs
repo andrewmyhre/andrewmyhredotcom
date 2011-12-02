@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using AndrewMyhre.com._2010.Services;
 using AndrewMyhre.com._2010.ViewModels;
 using System.Xml.Serialization;
 using System.Text;
@@ -30,7 +31,8 @@ namespace AndrewMyhre.com._2010
             this.Width = Application.Current.Host.Content.ActualWidth;
             this.Height = Application.Current.Host.Content.ActualHeight;
 
-            idea_presenter.Children.Add(new idea2());
+
+            idea_presenter.Children.Add(new idea3(new AndrewMyhreService()));
         }
 
         void Content_Resized(object sender, EventArgs e)
