@@ -32,7 +32,7 @@ namespace AndrewMyhre.com._2010
             this.Height = Application.Current.Host.Content.ActualHeight;
 
 
-            idea_presenter.Children.Add(new idea3(new AndrewMyhreService()));
+            idea_presenter.Children.Add(new idea2(new AndrewMyhreService()));
         }
 
         void Content_Resized(object sender, EventArgs e)
