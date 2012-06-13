@@ -41,7 +41,7 @@ namespace AndrewMyhre.com._2010
             foreach (string videoFilename in App.FlickerVideos)
             {
                 _flickers.Add(null);
-                queue.Add(index++.ToString(), new PreLoader(App.BaseUrl + "/videos/" + videoFilename, "flicker video"));
+                queue.Add(index++.ToString(), new PreLoader(App.BaseUrl + videoFilename, "flicker video"));
             }
             _queueSize = queue.Count;
             loading.Visibility = Visibility.Visible;

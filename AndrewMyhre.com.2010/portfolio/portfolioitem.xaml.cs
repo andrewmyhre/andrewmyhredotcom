@@ -30,7 +30,7 @@ namespace AndrewMyhre.com._2010.portfolio
             this.DataContext = _portfolioItem;
 
             if (string.IsNullOrEmpty(App.BaseUrl)) return;
-            if (_portfolioItem.ImageFilenames != null)
+            if (_portfolioItem.ImageFilenames != null && _portfolioItem.ImageFilenames.Length>0)
             {
                 foreach (string imageFilename in _portfolioItem.ImageFilenames)
                 {

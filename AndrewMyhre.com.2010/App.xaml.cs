@@ -30,11 +30,18 @@ namespace AndrewMyhre.com._2010
             this.Startup += this.Application_Startup;
             this.Exit += this.Application_Exit;
             this.UnhandledException += this.Application_UnhandledException;
-            BaseUrl = string.Format("http://{0}:{1}", Application.Current.Host.Source.Host, Application.Current.Host.Source.Port);
+            BaseUrl = string.Format("http://{0}:{1}", RealHostOrDefault("localhost"), Application.Current.Host.Source.Port);
             if (_testOnAMDotCom)
                 BaseUrl = "http://andrewmyhre.com";
 
             InitializeComponent();
+        }
+
+        private static string RealHostOrDefault(string defaultHost)
+        {
+            if (string.IsNullOrWhiteSpace(Application.Current.Host.Source.Host))
+                return defaultHost;
+            return Application.Current.Host.Source.Host;
         }
 
         void queue_ItemLoaded(object sender, LoadedEventArgs e)
@@ -50,8 +57,8 @@ namespace AndrewMyhre.com._2010
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            queue.Add("flickerVideos", new PreLoader(BaseUrl + "/xml/flicker.xml", "xml"));
-            queue.Add("mainVideos", new PreLoader(BaseUrl + "/xml/content.xml", "xml"));
+            queue.Add("flickerVideos", new PreLoader(BaseUrl + "/videos/flicker", "xml"));
+            queue.Add("mainVideos", new PreLoader(BaseUrl + "/videos/content", "xml"));
             queue.ItemLoaded += new EventHandler<LoadedEventArgs>(queue_ItemLoaded);
             queue.LoadNext();
         }
