@@ -154,7 +154,10 @@ namespace AndrewMyhre.com._2010
                 sourceUrl = App.BaseUrl + sourceUrl;
             content.Source =
                 new Uri(sourceUrl, UriKind.Absolute);
-            _nextContentVideoIndex = _rand.Next(App.ContentVideos.Length - 1);
+            //_nextContentVideoIndex = _rand.Next(App.ContentVideos.Length - 1);
+            _nextContentVideoIndex++;
+            if (_nextContentVideoIndex == App.ContentVideos.Length)
+                _nextContentVideoIndex = 0;
         }
 
         private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
