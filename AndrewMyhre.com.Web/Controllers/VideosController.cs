@@ -26,7 +26,9 @@ namespace AndrewMyhre.com.Web.Controllers
 
         public ActionResult Content()
         {
-            var files = new DirectoryInfo(ConfigurationManager.AppSettings["ContentVideosPath"]).GetFiles("v*.mp4");
+            var files = new DirectoryInfo(ConfigurationManager.AppSettings["ContentVideosPath"])
+                .GetFiles("v*.mp4")
+                .OrderByDescending(f=>f.CreationTime);
 
             var xml = new XDocument(
                 new XElement("videos",
