@@ -26,11 +26,9 @@ namespace AndrewMyhre.com.Web.Controllers
 
         public ActionResult Content()
         {
-            var files = new DirectoryInfo(ConfigurationManager.AppSettings["ContentVideosPath"]).GetFiles("v*.mp4");
-
             var xml = new XDocument(
                 new XElement("videos",
-                    files.Select(f => new XElement("video", "/videos/get/" + f.Name)).ToArray()));
+                    MvcApplication.MediaUrls.Select(url => new XElement("video", url)).ToArray()));
 
             var output = new StringBuilder();
             using (var writer = XmlWriter.Create(output))

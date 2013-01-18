@@ -68,7 +68,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
-    <Reference Include="Silverlight.PreLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
@@ -90,6 +89,9 @@
     <Compile Include="idea3.xaml.cs">
       <DependentUpon>idea3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="idea4.xaml.cs">
+      <DependentUpon>idea4.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ident.xaml.cs">
       <DependentUpon>Ident.xaml</DependentUpon>
     </Compile>
@@ -102,6 +104,12 @@
     <Compile Include="portfolio\portfolioitem.xaml.cs">
       <DependentUpon>portfolioitem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Preloading\IPreLoadable.cs" />
+    <Compile Include="Preloading\LoadedEventArgs.cs" />
+    <Compile Include="Preloading\PreLoader.cs" />
+    <Compile Include="Preloading\PreLoadingItemCompleteEventArgs.cs" />
+    <Compile Include="Preloading\PreLoadingProgressEventArgs.cs" />
+    <Compile Include="Preloading\PreLoadingQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AndrewMyhreService.cs" />
     <Compile Include="Services\IAndrewMyhreService.cs" />
@@ -110,6 +118,9 @@
     </Compile>
     <Compile Include="tv_loading.xaml.cs">
       <DependentUpon>tv_loading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tv_new.xaml.cs">
+      <DependentUpon>tv_new.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\PortfolioViewModel.cs" />
@@ -128,6 +139,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="idea3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="idea4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +181,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="tv_new.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

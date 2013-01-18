@@ -57,8 +57,8 @@ namespace AndrewMyhre.com._2010
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            queue.Add("flickerVideos", new PreLoader(BaseUrl + "/videos/flicker", "xml"));
-            queue.Add("mainVideos", new PreLoader(BaseUrl + "/videos/content", "xml"));
+            queue.Add("flickerVideos", new PreLoader(BaseUrl + "/azure/flickers", "xml"));
+            queue.Add("mainVideos", new PreLoader(BaseUrl + "/azure/wallpapers", "xml"));
             queue.ItemLoaded += new EventHandler<LoadedEventArgs>(queue_ItemLoaded);
             queue.LoadNext();
         }
