@@ -44,7 +44,7 @@ namespace AndrewMyhre.com._2010.portfolio
             }
             else if (!string.IsNullOrEmpty(_portfolioItem.VideoFilename))
             {
-                video.Source = new Uri(_portfolioItem.VideoFilename);
+                video.Source = new Uri(App.ContentVideos.Single(cv => cv.Contains(_portfolioItem.VideoFilename)));
                 mediaControls.Media = video;
                 mediaControls.btnFullScreen.Visibility = System.Windows.Visibility.Collapsed;
                 videoContainer.Visibility = System.Windows.Visibility.Visible;

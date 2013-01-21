@@ -63,6 +63,7 @@ namespace AndrewMyhre.com.Web
                 var validLocators = from l in asset.Locators
                                     where l.AccessPolicy.Permissions == AccessPermissions.Read
                                           && l.ExpirationDateTime > DateTime.Now
+                                          && l.Type == LocatorType.OnDemandOrigin
                                     select l;
 
                 if (validLocators.Count() > 0)
@@ -71,7 +72,13 @@ namespace AndrewMyhre.com.Web
                 }
                 else
                 {
-                    locator = _context.Locators.CreateLocator(LocatorType.Sas, asset, accessPolicy, DateTime.UtcNow.AddMinutes(-5));
+                    if (asset.Locators.Count() == 5)
+                    {
+                        asset.Locators.First().Delete();
+                    }
+
+                    locator = _context.Locators.CreateLocator(LocatorType.OnDemandOrigin, asset, accessPolicy,
+                                                                DateTime.UtcNow.AddMinutes(-5));
                 }
                 Debug("Created locator " + locator.Id);
                 //string urlForClientStreaming = locator.Path + manifestFile.Name + "/manifest";
