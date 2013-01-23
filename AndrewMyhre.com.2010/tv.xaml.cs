@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -27,6 +28,8 @@ namespace AndrewMyhre.com._2010
             Loaded += TvLoaded;
 
             _nextContentVideoIndex = App.ContentVideos.Length - 1;
+
+            content.MediaFailed += MediaElement_MediaEnded;
         }
 
         public event EventHandler OnBackButtonPressed;
@@ -41,7 +44,7 @@ namespace AndrewMyhre.com._2010
             foreach (string videoFilename in App.FlickerVideos)
             {
                 _flickers.Add(null);
-                queue.Add(index++.ToString(), new PreLoader(App.BaseUrl + videoFilename, "flicker video"));
+                queue.Add(index++.ToString(), new PreLoader(videoFilename, "flicker video"));
             }
             _queueSize = queue.Count;
             loading.Visibility = Visibility.Visible;
@@ -135,10 +138,21 @@ namespace AndrewMyhre.com._2010
         private void NextFlickerVideo()
         {
             MediaElement currentFlicker = null;
-            if (_videoIndex > -1) currentFlicker = _flickers[_videoIndex];
-            _videoIndex++;
-            if (_videoIndex > _flickers.Count - 1)
-                _videoIndex = 1; // only show the first video once
+
+            if (_videoIndex == -1)
+            {
+                // first play, choose a specific video to start
+                _videoIndex = Array.IndexOf(App.FlickerVideos, App.FlickerVideos.Single(fv => fv.Contains("flicker_4.mp4")));
+            }
+            else
+            {
+
+                if (_videoIndex > -1) currentFlicker = _flickers[_videoIndex];
+                _videoIndex++;
+                if (_videoIndex > _flickers.Count - 1)
+                    _videoIndex = 1; // only show the first video once
+            }
+
             MediaElement nextFlicker = _flickers[_videoIndex];
 
             ActivateFlickerVideo(nextFlicker);
@@ -150,6 +164,7 @@ namespace AndrewMyhre.com._2010
             content.Visibility = Visibility.Visible;
             _timer.Stop();
             string sourceUrl = App.ContentVideos[_nextContentVideoIndex];
+            System.Diagnostics.Debug.WriteLine("playing {0}", sourceUrl);
             if (sourceUrl.StartsWith("/"))
                 sourceUrl = App.BaseUrl + sourceUrl;
             content.Source =

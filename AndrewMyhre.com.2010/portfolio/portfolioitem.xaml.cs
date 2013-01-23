@@ -35,7 +35,7 @@ namespace AndrewMyhre.com._2010.portfolio
                 foreach (string imageFilename in _portfolioItem.ImageFilenames)
                 {
                     Image image = new Image();
-                    image.Source = new BitmapImage(new Uri(App.BaseUrl + "/images/portfolio/" + imageFilename));
+                    image.Source = new BitmapImage(new Uri(imageFilename));
                     images.Children.Add(image);
                     image.Width = 400;
                     image.Margin = new Thickness(5);
@@ -44,7 +44,7 @@ namespace AndrewMyhre.com._2010.portfolio
             }
             else if (!string.IsNullOrEmpty(_portfolioItem.VideoFilename))
             {
-                video.Source = new Uri(App.BaseUrl + "/videos/" + _portfolioItem.VideoFilename);
+                video.Source = new Uri(App.ContentVideos.Single(cv => cv.Contains(_portfolioItem.VideoFilename)));
                 mediaControls.Media = video;
                 mediaControls.btnFullScreen.Visibility = System.Windows.Visibility.Collapsed;
                 videoContainer.Visibility = System.Windows.Visibility.Visible;

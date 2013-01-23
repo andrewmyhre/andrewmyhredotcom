@@ -32,7 +32,7 @@ namespace AndrewMyhre.com.Web.Controllers
 
             var xml = new XDocument(
                 new XElement("videos",
-                    files.Select(f => new XElement("video", "/videos/get/" + f.Name)).ToArray()));
+                    MvcApplication.MediaUrls.Select(url => new XElement("video", url)).ToArray()));
 
             var output = new StringBuilder();
             using (var writer = XmlWriter.Create(output))

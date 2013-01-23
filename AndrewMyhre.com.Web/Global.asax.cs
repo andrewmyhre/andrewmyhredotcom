@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Timers;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -12,6 +9,9 @@ namespace AndrewMyhre.com.Web
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static VideoAsset[] MediaUrls = new VideoAsset[0];
+        private static Timer AzureCheckTimer;
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -32,9 +32,22 @@ namespace AndrewMyhre.com.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
+            
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            AzureCheckTimer = new Timer();
+            AzureCheckTimer.Interval = 12 * 60 * 60 * 1000; // every 12 hours
+            AzureCheckTimer.Elapsed += (sender, args) => GenerateAzureAssetUrls();
+            AzureCheckTimer.Start();
+
+            GenerateAzureAssetUrls();
+        }
+
+        public static void GenerateAzureAssetUrls()
+        {
+            var mediaUrls = new AzureAssetUrlGenerator().Generate();
+            MediaUrls = mediaUrls;
         }
     }
 }
