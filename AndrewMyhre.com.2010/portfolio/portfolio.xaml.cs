@@ -114,23 +114,44 @@ namespace AndrewMyhre.com._2010.portfolio
         private void btnPrevious_Click(object sender, RoutedEventArgs e)
         {
             if (portfolioIndex == 0) return;
+            StopVideo(portfolioIndex);
 
             CreateMoveAnimation(portfolio_items.Children[portfolioIndex], 0, screenWidth);
             CreateFadeAnimation(portfolio_items.Children[portfolioIndex], 1, 0);
             portfolioIndex--;
             CreateMoveAnimation(portfolio_items.Children[portfolioIndex], -screenWidth, 0);
             CreateFadeAnimation(portfolio_items.Children[portfolioIndex], 0, 1);
+            PlayVideo(portfolioIndex);
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
             if (portfolioIndex == portfolio_items.Children.Count-1) return;
+            StopVideo(portfolioIndex);
 
             CreateMoveAnimation(portfolio_items.Children[portfolioIndex], 0, -screenWidth);
             CreateFadeAnimation(portfolio_items.Children[portfolioIndex], 1, 0);
             portfolioIndex++;
             CreateMoveAnimation(portfolio_items.Children[portfolioIndex], screenWidth, 0);
             CreateFadeAnimation(portfolio_items.Children[portfolioIndex], 0, 1);
+            PlayVideo(portfolioIndex);
+        }
+
+        private void PlayVideo(int portfolioItemIndex)
+        {
+            ((portfolioitem) portfolio_items.Children[portfolioItemIndex]).PlayVideo();
+        }
+        private void StopVideo(int portfolioItemIndex)
+        {
+            ((portfolioitem)portfolio_items.Children[portfolioItemIndex]).StopVideo();
+        }
+
+        private void StopVideos()
+        {
+            foreach (portfolioitem portfolioItem in portfolio_items.Children)
+            {
+                portfolioItem.StopVideo();
+            }
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

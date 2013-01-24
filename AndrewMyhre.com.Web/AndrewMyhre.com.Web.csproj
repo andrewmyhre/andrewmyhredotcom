@@ -180,6 +180,15 @@
     <Content Include="images\portfolio\cl_2.png" />
     <Content Include="images\portfolio\cl_3.png" />
     <Content Include="images\portfolio\cl_4.png" />
+    <Content Include="images\portfolio\covercreator.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\portfolio\covercreator2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\portfolio\covercreator3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\portfolio\create_1.png" />
     <Content Include="images\portfolio\create_2.png" />
     <Content Include="images\portfolio\dw2_1.png" />
@@ -188,6 +197,9 @@
     <Content Include="images\portfolio\dw2_4.png" />
     <Content Include="images\portfolio\dw2_5.png" />
     <Content Include="images\portfolio\dw2_6.png" />
+    <Content Include="images\portfolio\justgiving.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\portfolio\translation_1.png" />
     <Content Include="images\portfolio\translation_2.png" />
     <Content Include="images\portfolio\translation_3.png" />
@@ -207,26 +219,6 @@
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\Silverlight.js" />
     <Content Include="Silverlight.js" />
-    <Content Include="videos\content\v1.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="videos\content\v2.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="videos\content\v3.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="videos\content\v4.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="videos\flicker_1.mp4" />
-    <Content Include="videos\flicker_2.mp4" />
-    <Content Include="videos\flicker_3.mp4" />
-    <Content Include="videos\flicker_4.mp4" />
-    <Content Include="videos\flicker_5.mp4" />
-    <Content Include="videos\flicker_6.mp4" />
-    <Content Include="videos\stock_vhs_1.wmv" />
-    <Content Include="videos\stock_vhs_2.wmv" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -260,9 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="videos\digitalwall.mp4" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\NoSilverlight.cshtml" />

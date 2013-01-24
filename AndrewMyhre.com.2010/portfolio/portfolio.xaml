@@ -159,9 +159,9 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="30">
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="30" MaxWidth="1024">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition MaxWidth="430" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -173,8 +173,8 @@
                 <Grid.OpacityMask>
                     <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
                         <GradientStop Color="Transparent" Offset="0" />
-                        <GradientStop Color="Black" Offset="0.02" />
-                        <GradientStop Color="Black" Offset="0.98" />
+                        <GradientStop Color="DarkRed" Offset="0.02" />
+                        <GradientStop Color="Red" Offset="0.98" />
                         <GradientStop Color="Transparent" Offset="1" />
                     </LinearGradientBrush>
                 </Grid.OpacityMask>
