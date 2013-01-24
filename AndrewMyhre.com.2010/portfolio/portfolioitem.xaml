@@ -6,7 +6,7 @@
     mc:Ignorable="d" xmlns:mp="clr-namespace:MediaPlayer;assembly=MediaPlayer"
     d:DesignHeight="300" d:DesignWidth="400">
     
-    <Border Background="Red" CornerRadius="10" Padding="20">
+    <Border Background="DarkSlateGray" CornerRadius="10" Padding="20">
         <Grid x:Name="LayoutRoot" Background="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -45,7 +45,7 @@
                             <TranslateTransform Y="0"/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <Rectangle Margin="0,0,0,0" Height="35" VerticalAlignment="Top" Fill="Red" Stroke="#00000000" RenderTransformOrigin="0.5,0.5"/>
+                    <Rectangle Margin="0,0,0,0" Height="35" VerticalAlignment="Top" Fill="Transparent" Stroke="#00000000" RenderTransformOrigin="0.5,0.5"/>
                     <mp:Controls x:Name="mediaControls" />
                 </Grid>
 
